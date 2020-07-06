@@ -603,7 +603,6 @@ bool addrToHash160(
     static BN_CTX *ctx = 0;
     if(unlikely(!ctx)) {
         ctx = BN_CTX_new();
-        BN_CTX_free(ctx);
         sum = BN_new();
     }
 
@@ -726,7 +725,6 @@ void hash160ToAddr(
 
     if(!ctx) {
         ctx = BN_CTX_new();
-        BN_CTX_free(ctx);
 
         b58 = BN_new();
         num = BN_new();
